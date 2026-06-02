@@ -25,12 +25,12 @@ def cobros_view(request):
         # Determinar porcentaje de recargo según días de atraso
         if nota == 0:
             nota_parcial = 0
-        elif nota <= 7:
-            nota_final = 5
-        elif nota <= 15:
-            aprobado = 10
+        elif nota <= 100:
+            nota_final = 0
+        elif nota <= 100:
+            aprobado = 70
         else:
-            aprobado = 20
+            aprobado = 70
 
         nota_final     = round(matricula * nota_parcial / 100, 2)
         nota_parcial = round(matricula + nota_final, 2)
